@@ -1,66 +1,37 @@
-## Foundry
+## SELF-DESTRUCT
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**selfdestruct is a special solidity operation used to delete a contract. It can also be used to force send ether to a contract as was the case with the `EtherGame` contract in `src` folder.**
 
-Foundry consists of:
+It's important to avoid the use of `address.this` in functions that are not pure/view as it often creates room for this problem.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## TESTING
 
-## Documentation
+To test this contract simple run the following command:
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
+1. Clone the Repo
 
 ```shell
-$ forge build
+git clone https://github.com/Chinwuba22/selfdestruct.git
 ```
 
-### Test
+2. Read and understand the contracts in `src` folder
+
+3. Compile all file
 
 ```shell
-$ forge test
+forge build
 ```
 
-### Format
+or
 
 ```shell
-$ forge fmt
+forge compile
 ```
 
-### Gas Snapshots
+4. Read and understand the contracts in `test` folder
+
+5. Run Test
 
 ```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+forge test
 ```
